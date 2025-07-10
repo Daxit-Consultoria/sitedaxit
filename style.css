@@ -405,3 +405,82 @@ footer {
     width: 100%;
   }
 }
+/* HEADER fixo e limpo */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0.5rem 0;
+}
+
+.header-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO: símbolo + texto */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo img.logo-simbolo {
+  height: 35px;
+  width: auto;
+}
+
+.logo span {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #000;
+}
+
+/* MENU principal */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #000;
+}
+
+/* RESPONSIVO para celular */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 20px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .nav-menu li a {
+    padding: 0.5rem 0;
+    display: block;
+    width: 100%;
+  }
+}
