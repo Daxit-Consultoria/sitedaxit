@@ -1,3 +1,18 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fff;
+  color: #222;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
 /* HEADER */
 header {
   background-color: #fff;
@@ -6,7 +21,8 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  padding: 0.5rem 0;
+  padding: 0.8rem 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .header-container {
@@ -14,11 +30,10 @@ header {
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
-/* LOGO */
 .logo {
   display: flex;
   align-items: center;
@@ -27,17 +42,17 @@ header {
 }
 
 .logo img.logo-simbolo {
-  height: 36px;
+  height: 32px;
   width: auto;
 }
 
 .logo span {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #000;
 }
 
-/* MENU padrão */
+/* NAVIGATION */
 .nav {
   display: flex;
 }
@@ -46,81 +61,30 @@ header {
   list-style: none;
   display: flex;
   gap: 2rem;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-menu li a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .nav-menu li a:hover {
   color: #000;
 }
 
-/* BOTÃO HAMBÚRGUER */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #000;
-}
-
-/* RESPONSIVO - CELULAR */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav {
-    display: none;
-    width: 100%;
-  }
-
-  .nav.open {
-    display: block;
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 0;
-    width: 100%;
-  }
-
-  .nav-menu li {
-    width: 100%;
-  }
-
-  .nav-menu li a {
-    display: block;
-    width: 100%;
-    padding: 0.5rem 0;
-  }
-
-  .header-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
+/* HAMBURGER BUTTON */
 .menu-toggle {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 24px;
-  height: 18px;
+  width: 26px;
+  height: 20px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-  margin-left: auto;
 }
 
 .menu-toggle .bar {
@@ -130,7 +94,159 @@ header {
   border-radius: 2px;
 }
 
-/* Mostrar só no mobile */
+/* HERO SECTION */
+.hero {
+  padding: 140px 20px 100px;
+  background: #f9f9f9;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content h2 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background: #000;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #333;
+}
+
+/* SECTION STYLES */
+section {
+  padding: 100px 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #666;
+}
+
+/* SERVICE CARDS */
+.servico-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #f5f5f5;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* CONTATO */
+.contato p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* FOOTER */
+footer {
+  background: #f0f0f0;
+  color: #555;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.footer-logo img {
+  height: 30px;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #333;
+  color: white;
+  font-size: 22px;
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  background: #000;
+}
+
+/* HERO LOGO DE FUNDO */
+.hero-bg-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0.05;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-bg-logo img {
+  max-width: 300px;
+  height: auto;
+}
+
+/* RESPONSIVO */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
@@ -144,29 +260,51 @@ header {
   .nav.open {
     display: block;
     width: 100%;
-    margin-top: 1rem;
   }
 
   .nav-menu {
     flex-direction: column;
     gap: 1rem;
-    padding: 0;
+    background-color: #fff;
+    padding: 1rem 0;
     width: 100%;
+    border-top: 1px solid #e0e0e0;
   }
 
   .nav-menu li {
-    width: 100%;
+    text-align: left;
+    padding: 0 20px;
   }
 
   .nav-menu li a {
     display: block;
-    width: 100%;
     padding: 0.5rem 0;
-    text-align: left;
+    font-size: 1.1rem;
+    color: #333;
   }
 
   .header-container {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .card {
+    padding: 2rem 1rem;
   }
 }
