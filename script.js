@@ -1,26 +1,37 @@
-// Menu responsivo
-const toggle = document.querySelector(".menu-toggle");
-const navMenu = document.querySelector(".nav-menu");
+// script.js - Efeitos e transições do site DAXIT
 
-toggle.addEventListener("click", () => {
-  navMenu.classList.toggle("open");
-});
+document.addEventListener("DOMContentLoaded", () => {
+  // Rolagem suave para âncoras
+  const links = document.querySelectorAll("a[href^='#']");
 
-// Animação ao rolar
-const faders = document.querySelectorAll(".fade-in");
-
-const appearOptions = {
-  threshold: 0.3,
-};
-
-const appearOnScroll = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add("visible");
-    observer.unobserve(entry.target);
+  links.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
   });
-}, appearOptions);
 
-faders.forEach((fader) => {
-  appearOnScroll.observe(fader);
+  // Animação de fade-in ao rolar
+  const sections = document.querySelectorAll("section");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  sections.forEach((section) => {
+    section.classList.add("hidden");
+    observer.observe(section);
+  });
 });
