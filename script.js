@@ -1,4 +1,12 @@
-// Ativar animação ao rolar a página
+// Menu responsivo
+const toggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+toggle.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
+});
+
+// Animação ao rolar
 const faders = document.querySelectorAll(".fade-in");
 
 const appearOptions = {

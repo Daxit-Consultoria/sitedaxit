@@ -1,160 +1,83 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daxit</title>
-    <a href="#inicio" class="logo">
-      <img src="logodaxit1.png" alt="Logo símbolo DAXIT" class="logo-simbolo" />
-      <span>DAXIT</span>
-    </a>
-
+    <title>Meu Site</title>
     <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
   </head>
   <body>
-    <!-- Header -->
     <header>
-      <div class="header-container">
-        <a href="#inicio" class="logo">
-          <img src="logodaxit1.png" alt="Logo DAXIT" class="logo-simbolo" />
-          <span>DAXIT</span>
+      <div class="container">
+        <a href="#" class="logo">
+          <img src="logo.png" alt="Logo" />
+          <span>Minha Marca</span>
         </a>
-
         <button class="menu-toggle" aria-label="Abrir menu">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
         </button>
-
-        <nav class="nav" id="nav">
-          <ul class="nav-menu">
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#sobre">Sobre nós</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#contato">Contato</a></li>
-          </ul>
-        </nav>
+        <ul class="nav-menu">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
       </div>
     </header>
 
-    <!-- Início -->
-    <div class="hero-bg-logo">
-      <img src="logodaxit1.png" alt="Marca DAXIT" />
-    </div>
-
-    <section id="inicio" class="hero">
-      <div class="hero-content">
-        <h2>Transforme seu negócio com tecnologia</h2>
-        <p>
-          Criação de sites, análise de dados e soluções inteligentes com a DAXIT
-        </p>
-        <a href="#contato" class="btn">Solicitar Orçamento</a>
+    <section class="hero" id="inicio">
+      <div class="hero-content fade-in">
+        <h2>Bem-vindo ao Meu Site</h2>
+        <p>Oferecemos soluções criativas e eficientes para o seu negócio.</p>
+        <a href="#contato" class="btn">Fale Conosco</a>
       </div>
     </section>
 
-    <!-- Sobre nós -->
-    <section id="sobre" class="sobre fade-in">
-      <div class="container">
-        <h2 class="section-title">Quem somos</h2>
-        <p class="section-description">
-          A <strong>DAXIT</strong> é uma empresa de tecnologia que entrega
-          soluções reais para empresas. Atuamos com desenvolvimento web,
-          automações, análise de dados e consultoria, com foco nas indústrias
-          moveleiras de Marco/CE.
-        </p>
-      </div>
+    <section id="sobre" class="fade-in">
+      <h2 class="section-title">Sobre Nós</h2>
+      <p class="section-description">
+        Somos especialistas em desenvolvimento web, design e marketing digital.
+      </p>
     </section>
 
-    <!-- Serviços -->
-    <section id="servicos" class="servicos fade-in">
-      <div class="container">
-        <h2 class="section-title">O que oferecemos</h2>
-        <div class="servico-cards">
-          <div class="card">
-            <div class="icon">🌐</div>
-            <h3>Criação e Hospedagem de Sites</h3>
-            <p>
-              Sites rápidos, seguros e com visual moderno. A sua empresa na
-              internet do jeito certo.
-            </p>
-          </div>
-          <div class="card">
-            <div class="icon">📊</div>
-            <h3>Power BI e Análise de Dados</h3>
-            <p>
-              Dashboards e relatórios personalizados para decisões mais
-              inteligentes.
-            </p>
-          </div>
-          <div class="card">
-            <div class="icon">⚙️</div>
-            <h3>Automação com Power Automate</h3>
-            <p>
-              Automatize tarefas repetitivas e ganhe tempo com fluxos
-              inteligentes.
-            </p>
-          </div>
-          <div class="card">
-            <div class="icon">💻</div>
-            <h3>Consultoria em TI</h3>
-            <p>
-              Organização de infraestrutura, redes, backup, computadores e
-              impressoras.
-            </p>
-          </div>
-          <div class="card">
-            <div class="icon">🏭</div>
-            <h3>Soluções para Indústrias Moveleiras</h3>
-            <p>
-              Implantação de MRP, PCP e estruturação de produtos para fábricas.
-            </p>
-          </div>
-          <div class="card">
-            <div class="icon">🎓</div>
-            <h3>Treinamentos</h3>
-            <p>
-              Capacitações práticas em Power BI, sistemas de gestão e automação.
-            </p>
-          </div>
+    <section id="servicos" class="fade-in">
+      <h2 class="section-title">Nossos Serviços</h2>
+      <div class="servico-cards">
+        <div class="card">
+          <div class="icon">💻</div>
+          <h3>Desenvolvimento Web</h3>
+          <p>Sites modernos, responsivos e otimizados para SEO.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🎨</div>
+          <h3>Design Gráfico</h3>
+          <p>Identidade visual, logotipos e materiais promocionais.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📈</div>
+          <h3>Marketing Digital</h3>
+          <p>Campanhas estratégicas para aumentar sua presença online.</p>
         </div>
       </div>
     </section>
 
-    <!-- Contato -->
-    <section id="contato" class="contato">
-      <div class="container">
-        <h2>Fale com a gente</h2>
-        <p>Entre em contato pelo WhatsApp: <strong>(88) 99218-8546</strong></p>
-        <a href="https://wa.me/5588992188546" class="btn" target="_blank"
-          >Enviar mensagem</a
-        >
-      </div>
+    <section id="contato" class="contato fade-in">
+      <h2 class="section-title">Entre em Contato</h2>
+      <p>Envie um e-mail para <strong>contato@meusite.com</strong></p>
+      <p>Ou fale conosco pelo WhatsApp clicando no botão abaixo.</p>
     </section>
 
-    <!-- Footer -->
     <footer>
       <div class="footer-logo">
-        <img src="logodaxit1.png" alt="Logo símbolo DAXIT" />
+        <img src="logo.png" alt="Logo" />
       </div>
-      <p>&copy; 2025 DAXIT. Todos os direitos reservados.</p>
+      <p>&copy; 2024 Minha Marca. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Botão flutuante WhatsApp -->
-    <a
-      href="https://wa.me/5588992188546"
-      class="whatsapp-float"
-      target="_blank"
-    >
-      💬
-    </a>
-    <script>
-      const toggle = document.querySelector(".menu-toggle");
-      const navMenu = document.querySelector(".nav-menu");
+    https://wa.me/5599999999999
 
-      toggle.addEventListener("click", () => {
-        navMenu.classList.toggle("open");
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
