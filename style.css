@@ -308,3 +308,348 @@ footer {
     padding: 2rem 1rem;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fff;
+  color: #222;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #000;
+}
+
+/* Hero */
+.hero {
+  padding: 140px 20px 100px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background: #111;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #000;
+}
+
+/* Seções */
+section {
+  padding: 100px 20px;
+}
+
+.sobre,
+.servicos,
+.contato {
+  background: #fff;
+  text-align: center;
+}
+
+.servico-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #f1f1f1;
+  padding: 2rem;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Contato */
+.contato p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.contato strong {
+  color: #000;
+}
+
+/* Footer */
+footer {
+  background: #f0f0f0;
+  color: #555;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #333;
+  color: white;
+  font-size: 22px;
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  background: #000;
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #111;
+  text-align: center;
+}
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #666;
+}
+
+/* Cards de serviços com ícones */
+.servico-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #f5f5f5;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Animação fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+.hero-bg-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0.05;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-bg-logo img {
+  max-width: 300px;
+  height: auto;
+}
+.footer-logo {
+  margin-bottom: 10px;
+}
+
+.footer-logo img {
+  height: 30px;
+  opacity: 0.6;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo img.logo-simbolo {
+  height: 30px;
+  width: auto;
+}
+
+.logo span {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #000;
+}
+/* Responsividade geral */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .card {
+    padding: 2rem 1rem;
+  }
+
+  .logo img,
+  .logo img.logo-simbolo {
+    height: 36px;
+  }
+
+  .logo span {
+    font-size: 1.4rem;
+  }
+
+  header .container {
+    padding: 1rem 0.5rem;
+  }
+
+  .whatsapp-float {
+    bottom: 15px;
+    right: 15px;
+    font-size: 20px;
+    padding: 12px;
+  }
+}
