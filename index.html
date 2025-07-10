@@ -20,7 +20,10 @@
           <img src="logodaxit1.png" alt="Logo DAXIT" class="logo-simbolo" />
           <span>DAXIT</span>
         </a>
-        <nav class="nav">
+
+        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+
+        <nav class="nav" id="nav">
           <ul class="nav-menu">
             <li><a href="#inicio">Início</a></li>
             <li><a href="#sobre">Sobre nós</a></li>
@@ -141,5 +144,13 @@
     >
       💬
     </a>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const nav = document.getElementById("nav");
+
+      menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("open");
+      });
+    </script>
   </body>
 </html>
