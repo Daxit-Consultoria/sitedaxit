@@ -3,65 +3,239 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daxit</title>
-    <a href="#inicio" class="logo">
-      <img src="logodaxit1.png" alt="Logo símbolo DAXIT" class="logo-simbolo" />
-      <span>DAXIT</span>
-    </a>
+    <title>DAXIT | Soluções em TI e Análise de Dados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #003366;
+        color: white;
+        padding: 2rem 1rem;
+        text-align: center;
+        animation: fadeInDown 1s ease;
+      }
+
+      header img {
+        max-width: 180px;
+        margin-bottom: 1rem;
+      }
+
+      nav {
+        margin-top: 1rem;
+      }
+
+      nav a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      section {
+        padding: 4rem 1rem;
+        max-width: 1000px;
+        margin: auto;
+        animation: fadeIn 1.5s ease;
+      }
+
+      h2 {
+        color: #003366;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+      }
+
+      .servicos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      .servico {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .servico:hover {
+        transform: translateY(-5px);
+      }
+
+      footer {
+        background: #003366;
+        color: white;
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+      }
+
+      .whatsapp-float i {
+        line-height: 60px;
+      }
+
+      /* Transições */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .servicos {
+          grid-template-columns: 1fr;
+        }
+
+        h2 {
+          font-size: 1.6rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
-      <div class="container">
-        <a href="#" class="logo">MeuSite</a>
-        <button class="menu-toggle" aria-label="Abrir menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-        <ul class="nav-menu">
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </div>
+      <img src="logo-daxit.png" alt="Logo da DAXIT" />
+      <h1>Soluções em TI, Análise de Dados e Criação de Sites</h1>
+      <nav>
+        <a href="#quem-somos">Quem Somos</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+      </nav>
     </header>
 
-    <section class="hero" id="inicio">
-      <h2>Bem-vindo ao Meu Site</h2>
-      <p>Este é um exemplo de site com menu responsivo.</p>
-      <a href="#sobre" class="btn">Saiba mais</a>
-    </section>
-
-    <section id="sobre">
-      <h2>Sobre</h2>
-      <p>Informações sobre o site ou empresa.</p>
+    <section id="quem-somos">
+      <h2>Quem é a DAXIT?</h2>
+      <p>
+        A DAXIT é especializada em análise de dados, TI e soluções digitais.
+        Ajudamos empresas a crescer com base em dados, automações e ferramentas
+        acessíveis, aliando tecnologia à gestão para decisões mais inteligentes
+        e eficazes.
+      </p>
+      <p>
+        Oferecemos serviços completos: dashboards com Power BI, segurança
+        digital, redes, servidores, help desk e agora também com Criação e
+        Hospedagem de Sites. Tudo com atendimento próximo, prático e humano.
+      </p>
     </section>
 
     <section id="servicos">
-      <h2>Serviços</h2>
-      <p>Lista de serviços oferecidos.</p>
+      <h2>Nossos Serviços</h2>
+      <div class="servicos">
+        <div class="servico">
+          <h3>Análise de Dados & BI</h3>
+          <p>
+            Dashboards com Power BI, integração com ERPs, planilhas, bancos de
+            dados e apoio à decisão com indicadores.
+          </p>
+        </div>
+        <div class="servico">
+          <h3>Cibersegurança</h3>
+          <p>
+            Monitoramento, gestão de acessos, consultorias e treinamentos para
+            segurança digital nas empresas.
+          </p>
+        </div>
+        <div class="servico">
+          <h3>Redes e Servidores</h3>
+          <p>
+            Instalação, manutenção, cloud computing e soluções escaláveis para
+            pequenas e médias empresas.
+          </p>
+        </div>
+        <div class="servico">
+          <h3>E-mail Corporativo</h3>
+          <p>
+            Contas com seu domínio, integração com calendários e proteção contra
+            spam e phishing.
+          </p>
+        </div>
+        <div class="servico">
+          <h3>Help Desk e Suporte Técnico</h3>
+          <p>
+            Suporte a usuários, manutenção preventiva, gestão de chamados e SLA.
+          </p>
+        </div>
+        <div class="servico">
+          <h3>Consultoria em TI</h3>
+          <p>
+            Planejamento, migração para nuvem, automação, integração de sistemas
+            e suporte personalizado.
+          </p>
+        </div>
+        <div class="servico">
+          <h3>Criação e Hospedagem de Sites</h3>
+          <p>
+            Sites modernos, rápidos, seguros e com a identidade visual da sua
+            empresa. A DAXIT cuida de tudo para você!
+          </p>
+        </div>
+      </div>
     </section>
 
     <section id="contato">
-      <h2>Contato</h2>
-      <p>Formas de entrar em contato.</p>
+      <h2>Fale com a DAXIT</h2>
+      <p>Email: <strong>comercial@daxit.com.br</strong></p>
+      <p>WhatsApp: <strong>(88) 99218-8546</strong></p>
+      <p>Siga nosso Instagram: <strong>@daxitbr</strong></p>
     </section>
 
     <footer>
-      <p>&copy; 2024 MeuSite. Todos os direitos reservados.</p>
+      <p>© 2025 DAXIT - Todos os direitos reservados</p>
     </footer>
 
-    <script>
-      const toggle = document.querySelector(".menu-toggle");
-      const navMenu = document.querySelector(".nav-menu");
-
-      toggle.addEventListener("click", () => {
-        navMenu.classList.toggle("open");
-      });
-    </script>
+    <a
+      href="https://wa.me/5588992188546"
+      class="whatsapp-float"
+      target="_blank"
+      aria-label="WhatsApp"
+    >
+      <i>🟢</i>
+    </a>
   </body>
 </html>
