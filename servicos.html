@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serviços | DaxIt</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .servicos-section {
+        background: #181c22;
+        color: #fff;
+        padding: 2.5em 0.5em 2em 0.5em;
+        border-radius: 22px;
+        box-shadow: 0 4px 32px rgba(0, 0, 0, 0.18);
+        margin-bottom: 2em;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2em;
+        margin-top: 2em;
+      }
+      .service-card {
+        background: linear-gradient(135deg, #23272f 80%, #111 100%);
+        border-radius: 16px;
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.13);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        min-height: 420px;
+        position: relative;
+        transition: box-shadow 0.2s, transform 0.2s;
+      }
+      .service-card:hover {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
+        transform: translateY(-4px) scale(1.01);
+      }
+      .service-img-wrap {
+        width: 100%;
+        height: 180px;
+        background: #111;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-bottom: 1px solid #23272f;
+      }
+      .service-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.7;
+        filter: grayscale(0.2) brightness(0.85);
+        transition: opacity 0.2s;
+      }
+      .service-card:hover .service-img {
+        opacity: 0.95;
+      }
+      .service-content {
+        flex: 1 1 auto;
+        padding: 1.3em 1.2em 1.2em 1.2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+      .service-title {
+        font-size: 1.18em;
+        font-weight: bold;
+        margin-bottom: 0.7em;
+        color: #fff;
+        letter-spacing: 0.01em;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.13);
+      }
+      .service-list {
+        color: #e0e0e0;
+        font-size: 1em;
+        margin-bottom: 1.3em;
+        padding-left: 1.1em;
+        line-height: 1.6;
+      }
+      .service-contact-btn {
+        margin-top: auto;
+        display: inline-block;
+        background: #111;
+        color: #fff;
+        padding: 0.7em 1.7em;
+        border-radius: 24px;
+        font-size: 1em;
+        font-weight: 600;
+        text-decoration: none;
+        border: 1.5px solid #fff;
+        transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.01em;
+      }
+      .service-contact-btn:hover {
+        background: #fff;
+        color: #181c22;
+        border: 1.5px solid #181c22;
+        transform: scale(1.04);
+      }
+      @media (max-width: 900px) {
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5em;
+        }
+        .servicos-section {
+          padding: 1.2em 0.1em 1em 0.1em;
+        }
+        .service-card {
+          min-height: 320px;
+        }
+        .service-img-wrap {
+          height: 120px;
+        }
+      }
+      @media (max-width: 600px) {
+        .service-title {
+          font-size: 1em;
+        }
+        .service-card {
+          min-height: 220px;
+        }
+        .service-img-wrap {
+          height: 80px;
+        }
+        .service-content {
+          padding: 0.8em 0.5em 0.7em 0.5em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container header-flex">
+        <a href="index.html"
+          ><img src="logo.png" alt="Logo DaxIt" class="logo"
+        /></a>
+        <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+        <nav>
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li class="active">
+              <a href="servicos.html" class="active">Serviços</a>
+            </li>
+            <li><a href="index.html#sobre">Quem Somos</a></li>
+            <li><a href="index.html#missao">Missão</a></li>
+            <li><a href="index.html#diferenciais">Diferenciais</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="servicos-section">
+        <h1
+          style="
+            text-align: center;
+            font-size: 2.1em;
+            font-weight: 800;
+            letter-spacing: 0.01em;
+            margin-bottom: 1.5em;
+            color: #111;
+            text-shadow: none;
+          "
+        >
+          Nossos Serviços
+        </h1>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-img-wrap">
+              <img
+                src="sites.png"
+                alt="Desenvolvimento de Sites"
+                class="service-img"
+              />
+            </div>
+            <div class="service-content">
+              <div class="service-title">Desenvolvimento de Sites</div>
+              <ul class="service-list">
+                <li>
+                  Criação de sites institucionais, landing pages e portais;
+                </li>
+                <li>Design responsivo e otimizado para SEO;</li>
+                <li>Integração com sistemas e ferramentas de marketing;</li>
+                <li>Hospedagem e manutenção contínua.</li>
+              </ul>
+              <a
+                href="https://wa.me/55889921888546"
+                class="service-contact-btn"
+                target="_blank"
+                >Entrar em contato</a
+              >
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-img-wrap">
+              <img
+                src="analisededados.png"
+                alt="Análise de Dados"
+                class="service-img"
+              />
+            </div>
+            <div class="service-content">
+              <div class="service-title">
+                Análise de Dados e Business Intelligence
+              </div>
+              <ul class="service-list">
+                <li>
+                  Coleta e integração de dados de diversas fontes (ERPs, CRMs,
+                  planilhas, bancos de dados);
+                </li>
+                <li>Modelagem e tratamento dos dados (ETL);</li>
+                <li>
+                  Criação de dashboards interativos e relatórios personalizados
+                  com Power BI;
+                </li>
+                <li>
+                  Suporte à cultura de dados e tomada de decisão baseada em
+                  indicadores.
+                </li>
+              </ul>
+              <a
+                href="https://wa.me/55889921888546"
+                class="service-contact-btn"
+                target="_blank"
+                >Entrar em contato</a
+              >
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-img-wrap">
+              <img
+                src="gestaoti.png"
+                alt="Consultoria e Gestão de TI"
+                class="service-img"
+              />
+            </div>
+            <div class="service-content">
+              <div class="service-title">Consultoria e Gestão de TI</div>
+              <ul class="service-list">
+                <li>Diagnóstico e planejamento de infraestrutura de TI</li>
+                <li>Segurança da informação e backups</li>
+                <li>Integração de sistemas e automação de processos</li>
+                <li>Treinamento e suporte técnico personalizado</li>
+                <li>
+                  Migração para a nuvem e soluções baseadas em cloud computing
+                </li>
+                <li>Gestão de TI para pequenas e médias empresas</li>
+                <li>
+                  Acompanhamento técnico de sistemas específicos (ex: Forwood,
+                  Bitrix)
+                </li>
+                <li>Implantação de boas práticas</li>
+              </ul>
+              <a
+                href="https://wa.me/55889921888546"
+                class="service-contact-btn"
+                target="_blank"
+                >Entrar em contato</a
+              >
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-img-wrap">
+              <img
+                src="ciberseguranca.jpg"
+                alt="Cibersegurança"
+                class="service-img"
+              />
+            </div>
+            <div class="service-content">
+              <div class="service-title">Cibersegurança</div>
+              <ul class="service-list">
+                <li>Monitoramento e prevenção contra invasões;</li>
+                <li>Gestão de acessos e políticas de segurança;</li>
+                <li>Consultoria e auditorias de segurança digital;</li>
+                <li>Treinamento de equipes para práticas seguras.</li>
+              </ul>
+              <a
+                href="https://wa.me/55889921888546"
+                class="service-contact-btn"
+                target="_blank"
+                >Entrar em contato</a
+              >
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-img-wrap">
+              <img
+                src="email.png"
+                alt="E-mail Corporativo"
+                class="service-img"
+              />
+            </div>
+            <div class="service-content">
+              <div class="service-title">E-mail Corporativo</div>
+              <ul class="service-list">
+                <li>Contas personalizadas com seu domínio;</li>
+                <li>
+                  Integração com calendários, contatos e ferramentas de
+                  produtividade;
+                </li>
+                <li>Proteção contra spam, phishing e perda de mensagens.</li>
+              </ul>
+              <a
+                href="https://wa.me/55889921888546"
+                class="service-contact-btn"
+                target="_blank"
+                >Entrar em contato</a
+              >
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-img-wrap">
+              <img
+                src="helpdesk.jpg"
+                alt="Help Desk e Suporte Técnico"
+                class="service-img"
+              />
+            </div>
+            <div class="service-content">
+              <div class="service-title">Help Desk e Suporte Técnico</div>
+              <ul class="service-list">
+                <li>
+                  Suporte a usuários (hardware, software, acesso e sistemas);
+                </li>
+                <li>Manutenção preventiva e corretiva de equipamentos;</li>
+                <li>Gestão de chamados e SLA.</li>
+              </ul>
+              <a
+                href="https://wa.me/55889921888546"
+                class="service-contact-btn"
+                target="_blank"
+                >Entrar em contato</a
+              >
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-img-wrap">
+              <img
+                src="redes.jpeg"
+                alt="Infraestrutura de Redes e Servidores"
+                class="service-img"
+              />
+            </div>
+            <div class="service-content">
+              <div class="service-title">
+                Infraestrutura de Redes e Servidores
+              </div>
+              <ul class="service-list">
+                <li>Instalação e manutenção de redes cabeadas e Wi-Fi;</li>
+                <li>
+                  Configuração e gerenciamento de servidores locais e em nuvem;
+                </li>
+                <li>
+                  Soluções escaláveis para ambientes corporativos de pequeno a
+                  grande porte.
+                </li>
+              </ul>
+              <a
+                href="https://wa.me/55889921888546"
+                class="service-contact-btn"
+                target="_blank"
+                >Entrar em contato</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>&copy; 2024 DaxIt. Todos os direitos reservados.</footer>
+    <script>
+      // Menu responsivo
+      document.querySelector(".menu-toggle").onclick = function () {
+        document.querySelector(".nav-list").classList.toggle("open");
+      };
+    </script>
+  </body>
+</html>
