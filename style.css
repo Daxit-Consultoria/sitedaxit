@@ -1,128 +1,173 @@
-body {
-  font-family: "Segoe UI", sans-serif;
-  margin: 0;
-  background-color: #fff;
-  color: #111;
-  line-height: 1.6;
+/* Reset e base */
+* {
+  box-sizing: border-box;
 }
-
+body {
+  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+  color: #222;
+  line-height: 1.7;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5em;
+}
 header {
-  background-color: #000;
+  background: #0a1833;
   color: #fff;
-  padding: 1em 2em;
+  padding: 0.7em 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.header-flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
-
 .logo {
-  height: 50px;
+  height: 56px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08));
 }
-
 nav ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.5em;
+  gap: 2em;
   margin: 0;
   padding: 0;
 }
-
 nav a {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s;
+  letter-spacing: 0.5px;
+  font-size: 1.08em;
+  transition: color 0.2s;
 }
-
 nav a:hover {
-  color: #ccc;
+  color: #25d366;
 }
-
+main {
+  margin-top: 2em;
+}
 section {
-  padding: 3em 2em;
-  max-width: 1200px;
-  margin: 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(10, 24, 51, 0.06);
+  margin-bottom: 2.5em;
+  padding: 2.5em 2em;
+  transition: box-shadow 0.3s;
 }
-
+section:hover {
+  box-shadow: 0 4px 32px rgba(10, 24, 51, 0.1);
+}
 h1,
 h2,
 h3 {
-  color: #000;
+  color: #0a1833;
   margin-bottom: 0.5em;
+  font-weight: 700;
 }
-
+h1 {
+  font-size: 2.2em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.15em;
+}
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5em;
   margin-top: 1.5em;
 }
-
+.services div {
+  background: #f3f7fa;
+  border-radius: 10px;
+  padding: 1em 1.2em;
+  font-weight: 500;
+  color: #0a1833;
+  box-shadow: 0 1px 4px rgba(10, 24, 51, 0.04);
+}
+.diferenciais-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  font-size: 1.08em;
+}
+.contato-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  align-items: center;
+  justify-content: space-between;
+}
+.contato-flex a {
+  word-break: break-all;
+}
+.whatsapp-button {
+  display: inline-block;
+  background: linear-gradient(90deg, #25d366 60%, #128c7e 100%);
+  color: #fff;
+  padding: 1em 2em;
+  border-radius: 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.1);
+  transition: background 0.2s, transform 0.2s;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+.whatsapp-button:hover {
+  background: linear-gradient(90deg, #128c7e 60%, #25d366 100%);
+  transform: scale(1.04);
+}
 footer {
-  background-color: #000;
+  background: #0a1833;
   color: #fff;
   text-align: center;
   padding: 2em 1em;
-  font-size: 0.9em;
+  font-size: 0.95em;
+  border-radius: 18px 18px 0 0;
+  margin-top: 2em;
 }
-
-.whatsapp-button {
-  display: inline-block;
-  background-color: #25d366;
-  color: white;
-  padding: 0.75em 1.5em;
-  text-decoration: none;
-  border-radius: 25px;
-  margin-top: 1em;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.whatsapp-button:hover {
-  background-color: #1ebd5d;
-}
-
-ul {
-  padding-left: 1.2em;
-}
-
-ul li {
-  margin-bottom: 0.5em;
-}
-
-@media (max-width: 768px) {
-  header {
+@media (max-width: 900px) {
+  .header-flex,
+  .contato-flex {
     flex-direction: column;
     align-items: flex-start;
+    gap: 1.2em;
   }
-
   nav ul {
     flex-direction: column;
-    width: 100%;
-    margin-top: 1em;
-  }
-
-  nav ul li {
+    gap: 1em;
     width: 100%;
   }
-
-  .grid {
-    grid-template-columns: 1fr;
+  .container {
+    padding: 0 0.7em;
   }
 }
-
-/* Animações suaves nas seções */
+@media (max-width: 600px) {
+  section {
+    padding: 1.2em 0.5em;
+  }
+  h1 {
+    font-size: 1.4em;
+  }
+  h2 {
+    font-size: 1.1em;
+  }
+}
+/* Animação de fade-in nas seções */
 section {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.6s, transform 0.6s;
 }
-
 section.visible {
   opacity: 1;
   transform: translateY(0);

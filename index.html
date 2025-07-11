@@ -5,23 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daxit - Soluções em TI</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="assets/logodaxit.png" />
+    <!-- Google Fonts para visual moderno -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
-      <img src="assets/logodaxit.png" alt="Logo DAXIT" class="logo" />
-      <nav>
-        <ul>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#missao">Missão</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#diferenciais">Diferenciais</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
+      <div class="container header-flex">
+        <img src="assets/logodaxit.png" alt="Logo DAXIT" class="logo" />
+        <nav>
+          <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#missao">Missão</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#diferenciais">Diferenciais</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
-      <section id="sobre">
+      <section id="sobre" class="container">
         <h1>Quem é a DAXIT</h1>
         <p>
           A DAXIT é uma empresa especializada em análise de dados e tecnologia
@@ -35,7 +43,7 @@
         </p>
       </section>
 
-      <section id="missao">
+      <section id="missao" class="container">
         <h2>Missão, Visão e Valores</h2>
         <div class="grid">
           <div>
@@ -63,9 +71,9 @@
         </div>
       </section>
 
-      <section id="servicos">
+      <section id="servicos" class="container">
         <h2>Nossos Serviços</h2>
-        <div class="grid">
+        <div class="grid services">
           <div><strong>•</strong> Análise de Dados e Business Intelligence</div>
           <div><strong>•</strong> Cibersegurança</div>
           <div><strong>•</strong> Infraestrutura de Redes e Servidores</div>
@@ -76,33 +84,44 @@
         </div>
       </section>
 
-      <section id="diferenciais">
+      <section id="diferenciais" class="container">
         <h2>Diferenciais da DAXIT</h2>
-        <ul>
+        <ul class="diferenciais-list">
           <li>Visão estratégica com foco em melhoria contínua</li>
           <li>Integração entre tecnologia e gestão</li>
           <li>Didática e facilidade em treinar equipes</li>
         </ul>
       </section>
 
-      <section id="contato">
+      <section id="contato" class="container">
         <h2>Contato</h2>
-        <p>
-          Email:
-          <a href="mailto:comercial@daxit.com.br">comercial@daxit.com.br</a>
-        </p>
-        <p>Telefone: <a href="tel:+5588992188546">(88) 99218-8546</a></p>
-        <a
-          href="https://wa.me/5588992188546"
-          class="whatsapp-button"
-          target="_blank"
-          >Fale conosco no WhatsApp</a
-        >
+        <div class="contato-flex">
+          <div>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:comercial@daxit.com.br">comercial@daxit.com.br</a>
+            </p>
+            <p>
+              <strong>Telefone:</strong>
+              <a href="tel:+5588992188546">(88) 99218-8546</a>
+            </p>
+          </div>
+          <div>
+            <a
+              href="https://wa.me/5588992188546"
+              class="whatsapp-button"
+              target="_blank"
+              >Fale conosco no WhatsApp</a
+            >
+          </div>
+        </div>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2025 DAXIT. Todos os direitos reservados.</p>
+      <div class="container">
+        <p>&copy; 2025 DAXIT. Todos os direitos reservados.</p>
+      </div>
     </footer>
 
     <script src="assets/script.js"></script>
