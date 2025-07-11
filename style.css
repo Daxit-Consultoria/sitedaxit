@@ -5,9 +5,14 @@
 body {
   font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
   margin: 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+  background: #fff;
   color: #222;
   line-height: 1.7;
+}
+header,
+footer {
+  background: #111;
+  color: #fff;
 }
 .container {
   max-width: 1100px;
@@ -15,8 +20,8 @@ body {
   padding: 0 1.5em;
 }
 header {
-  background: #0a1833;
-  color: #fff;
+  background: #111 !important;
+  color: #fff !important;
   padding: 0.7em 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
@@ -30,23 +35,43 @@ header {
   height: 56px;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08));
 }
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2em;
-  margin: 0;
-  padding: 0;
+nav,
+nav ul,
+.nav-list {
+  background: #111 !important;
 }
 nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  font-size: 1.08em;
-  transition: color 0.2s;
+  color: #fff !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  background: none !important;
 }
-nav a:hover {
-  color: #25d366;
+nav a[href="#sobre"] {
+  color: #fff !important;
+  border-bottom: none !important;
+  background: none !important;
+}
+nav a[href="#sobre"]:hover,
+.nav-list li.active a[href="#sobre"],
+.nav-list li a.active[href="#sobre"] {
+  color: #bbb !important;
+  border-bottom: 2px solid #bbb !important;
+  background: none !important;
+}
+nav a:hover,
+.nav-list li.active a,
+.nav-list li a.active {
+  color: #bbb !important;
+  border-bottom: 2px solid #bbb !important;
+  background: none !important;
+}
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  cursor: pointer;
+  margin-left: 1em;
 }
 main {
   margin-top: 2em;
@@ -54,18 +79,18 @@ main {
 section {
   background: #fff;
   border-radius: 18px;
-  box-shadow: 0 2px 16px rgba(10, 24, 51, 0.06);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
   margin-bottom: 2.5em;
   padding: 2.5em 2em;
   transition: box-shadow 0.3s;
 }
 section:hover {
-  box-shadow: 0 4px 32px rgba(10, 24, 51, 0.1);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.1);
 }
 h1,
 h2,
 h3 {
-  color: #0a1833;
+  color: #111;
   margin-bottom: 0.5em;
   font-weight: 700;
 }
@@ -85,28 +110,28 @@ h3 {
   margin-top: 1.5em;
 }
 .services div {
-  background: #f3f7fa;
+  background: #f3f3f3;
   border-radius: 10px;
   padding: 1em 1.2em;
   font-weight: 500;
-  color: #0a1833;
-  box-shadow: 0 1px 4px rgba(10, 24, 51, 0.04);
+  color: #111;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
 }
 .services div:hover {
   transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.1);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
 }
 .service-icon {
-  color: #128c7e;
+  color: #888;
   margin-right: 0.7em;
   font-size: 1.3em;
   vertical-align: middle;
   transition: color 0.2s, transform 0.2s;
 }
 .services div:hover .service-icon {
-  color: #25d366;
+  color: #111;
   transform: scale(1.2) rotate(-8deg);
 }
 .diferenciais-list {
@@ -144,7 +169,7 @@ h3 {
   transform: scale(1.04);
 }
 footer {
-  background: #0a1833;
+  background: #111;
   color: #fff;
   text-align: center;
   padding: 2em 1em;
@@ -199,21 +224,21 @@ footer {
 .banner-principal {
   width: 100%;
   min-height: 340px;
-  background: linear-gradient(120deg, #0a1833 60%, #25d366 100%), url('banner-ti.jpg') center/cover no-repeat;
+  background: linear-gradient(120deg, #111 0%, #444 100%);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   padding: 3em 1em 2em 1em;
-  box-shadow: 0 4px 32px rgba(10,24,51,0.10);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 .banner-principal::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: rgba(10,24,51,0.60);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 .banner-content {
@@ -225,7 +250,7 @@ footer {
 .banner-logo {
   width: 90px;
   margin-bottom: 1em;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10));
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
 }
 .banner-principal h1 {
   font-size: 2.2em;
@@ -236,24 +261,24 @@ footer {
 .banner-principal p {
   font-size: 1.18em;
   margin-bottom: 1.5em;
-  color: #e0f7ef;
+  color: #e0e0e0;
 }
 .banner-cta {
   display: inline-block;
-  background: linear-gradient(90deg, #25d366 60%, #128c7e 100%);
+  background: #111;
   color: #fff;
   padding: 0.9em 2.2em;
   border-radius: 30px;
   font-size: 1.1em;
   font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(37,211,102,0.10);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: background 0.2s, transform 0.2s;
   border: none;
   outline: none;
 }
 .banner-cta:hover {
-  background: linear-gradient(90deg, #128c7e 60%, #25d366 100%);
+  background: #333;
   transform: scale(1.04);
 }
 @media (max-width: 900px) {
@@ -337,7 +362,7 @@ footer {
   }
 }
 .section-icon {
-  color: #25d366;
+  color: #888 !important;
   margin-right: 0.5em;
   font-size: 1.2em;
   vertical-align: middle;
@@ -353,8 +378,9 @@ footer {
 .servicos-section,
 .diferenciais-section,
 .contato-section {
-  border-left: 6px solid #25d366;
+  border-left: none !important;
   padding-left: 2em;
+  background: #fff !important;
 }
 .missao-section .grid > div,
 .servicos-section .services > div {
@@ -368,6 +394,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 0.7em;
+  color: #222;
 }
 /* Animação de fade-in nas seções */
 section {
@@ -425,4 +452,10 @@ html {
   font-size: 0.98em;
   color: #25d366;
   min-height: 1.2em;
+}
+/* Corrige cor e sublinhado do título Sobre */
+#sobre h1 {
+  color: #111 !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
 }
