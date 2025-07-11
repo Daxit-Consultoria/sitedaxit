@@ -381,8 +381,6 @@
       </div>
     </footer>
 
-    <script src="assets/script.js"></script>
-    <script src="script.js"></script>
     <style>
       /* ...existing code... */
 
@@ -915,66 +913,31 @@
     </style>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Banner serviços slider
-        const slides = document.querySelectorAll(
-          ".banner-slider-servicos .slide-servico"
+        // Slider principal do banner
+        const slides = document.querySelectorAll("#main-slider .main-slide");
+        const dots = document.querySelectorAll("#main-slider .main-slider-dot");
+        const servicos = document.querySelectorAll(
+          "#servicos-destaque .servico-destaque"
         );
-        const dots = document.querySelectorAll(".slider-dot-servico");
-        const bannerBg = document.getElementById("banner-bg-img-dynamic");
         let current = 0;
         let interval = null;
 
-        function setBannerBg(idx) {
-          if (!bannerBg) return;
-          if (idx === 0) {
-            bannerBg.className = "banner-bg-img";
-          } else {
-            const slide = slides[idx];
-            const bg = slide.getAttribute("data-bg");
-            if (bg === "sites.png")
-              bannerBg.className = "banner-bg-img bg-sites";
-            else if (bg === "gestaoti.png")
-              bannerBg.className = "banner-bg-img bg-gestaoti";
-            else if (bg === "analisededados.png")
-              bannerBg.className = "banner-bg-img bg-analisededados";
-            else bannerBg.className = "banner-bg-img";
-          }
-        }
-
-        function showSlide(idx) {
-          slides.forEach((slide, i) => {
-            slide.classList.toggle("active", i === idx);
-            dots[i].classList.toggle("active", i === idx);
-          });
-          setBannerBg(idx);
-          current = idx;
-        }
-
-        function nextSlide() {
-          showSlide((current + 1) % slides.length);
-        }
-
-        interval = setInterval(nextSlide, 4000);
-
-        dots.forEach((dot, idx) => {
-          dot.addEventListener("click", () => {
-            showSlide(idx);
-            clearInterval(interval);
-            interval = setInterval(nextSlide, 4000);
-          });
-        });
-
         // Sincronizar serviços com o banner
         function syncServicosSection(idx) {
-          const servicos = document.querySelectorAll(".servico-destaque");
           servicos.forEach((el, i) => {
             el.style.display = i === idx - 1 ? "block" : "none";
           });
         }
 
-        // Inicializa o banner na primeira imagem correta
-        setBannerBg(0);
-        syncServicosSection(0);
+        function showSlide(idx) {
+          slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === idx);
+          });
+          dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === idx);
+          });
+          current = idx;
+        }
 
         // Modifique showSlide para sincronizar os serviços
         function showSlideAndSync(idx) {
@@ -982,32 +945,12 @@
           syncServicosSection(idx);
         }
 
-        // Substitua os listeners para usar showSlideAndSync
-        dots.forEach((dot, idx) => {
-          dot.addEventListener("click", () => {
-            showSlideAndSync(idx);
-            clearInterval(interval);
-            interval = setInterval(nextSlide, 4000);
-          });
-        });
-
-        // Substitua o intervalo para usar showSlideAndSync
-        clearInterval(interval);
-        interval = setInterval(
-          () => showSlideAndSync((current + 1) % slides.length),
-          4000
-        );
-
-        // Inicializa
-        showSlideAndSync(0);
-      });
-    </script>
-  </body>
-</html>
-          syncServicosSection(idx);
+        function nextSlide() {
+          let next = (current + 1) % slides.length;
+          showSlideAndSync(next);
         }
 
-        // Substitua os listeners para usar showSlideAndSync
+        // Dots click
         dots.forEach((dot, idx) => {
           dot.addEventListener("click", () => {
             showSlideAndSync(idx);
@@ -1016,12 +959,8 @@
           });
         });
 
-        // Substitua o intervalo para usar showSlideAndSync
-        clearInterval(interval);
-        interval = setInterval(
-          () => showSlideAndSync((current + 1) % slides.length),
-          4000
-        );
+        // Auto slide
+        interval = setInterval(nextSlide, 4000);
 
         // Inicializa
         showSlideAndSync(0);

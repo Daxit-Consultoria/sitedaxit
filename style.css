@@ -548,7 +548,6 @@ footer {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
   margin-bottom: 0.5em;
 }
 .missao-section .grid > div:hover {
