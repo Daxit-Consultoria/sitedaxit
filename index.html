@@ -382,6 +382,13 @@
       </div>
     </footer>
 
+    <!-- Botão Voltar ao Topo -->
+    <button id="btn-topo" title="Voltar ao topo">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 17V5M11 5L5 11M11 5L17 11" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
     <style>
       /* ...existing code... */
 
@@ -964,7 +971,64 @@
         if (activeLi) {
           activeLi.classList.add('active');
         }
+
+        // Botão voltar ao topo
+        const btnTopo = document.getElementById('btn-topo');
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > 300) {
+            btnTopo.style.display = 'block';
+          } else {
+            btnTopo.style.display = 'none';
+          }
+        });
+        btnTopo.onclick = function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
       });
     </script>
+    <style>
+      #btn-topo {
+        display: none;
+        position: fixed;
+        bottom: 32px;
+        right: 32px;
+        z-index: 999;
+        background: #128c7e;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+      }
+      #btn-topo:hover {
+        background: #0a7bbd;
+        transform: scale(1.08);
+      }
+      #btn-topo svg {
+        display: block;
+        margin: 0 auto;
+        width: 22px;
+        height: 22px;
+      }
+      @media (max-width: 600px) {
+        #btn-topo {
+          width: 38px;
+          height: 38px;
+          bottom: 16px;
+          right: 16px;
+        }
+        #btn-topo svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    </style>
   </body>
 </html>

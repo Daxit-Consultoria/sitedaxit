@@ -71,6 +71,9 @@
           flex-direction: row;
           flex-wrap: wrap;
         }
+        nav {
+          width: 100%;
+        }
         .nav-list {
           flex-direction: column;
           background: #181c22;
@@ -81,6 +84,7 @@
           width: 100%;
           display: none;
           gap: 0;
+          z-index: 200;
         }
         .nav-list.open {
           display: flex;
@@ -99,6 +103,21 @@
         }
         .servicos-section {
           padding: 1em 0.2em 1em 0.2em;
+        }
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+        .service-card {
+          min-height: 180px;
+        }
+        .service-img-wrap {
+          height: 60px;
+        }
+        .service-content {
+          padding: 0.5em 0.2em 0.5em 0.2em;
+        }
+        h1 {
+          font-size: 1.2em !important;
         }
       }
       /* ...restante do CSS da página... */
@@ -472,20 +491,32 @@
 
     <!-- Botão Voltar ao Topo -->
     <button id="btn-topo" title="Voltar ao topo">
-      <i class="fas fa-arrow-up"></i>
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 17V5M11 5L5 11M11 5L17 11" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </button>
 
     <script>
       // Menu responsivo
-      document.querySelector(".menu-toggle").onclick = function () {
-        document.querySelector(".nav-list").classList.toggle("open");
-      };
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navList = document.querySelector(".nav-list");
+      menuToggle.addEventListener("click", function () {
+        navList.classList.toggle("open");
+      });
+      // Fecha o menu ao clicar em um link (mobile)
+      navList.querySelectorAll("a").forEach(function(link) {
+        link.addEventListener("click", function() {
+          if (window.innerWidth <= 900) {
+            navList.classList.remove("open");
+          }
+        });
+      });
 
       // Botão voltar ao topo
       const btnTopo = document.getElementById('btn-topo');
       window.addEventListener('scroll', function () {
         if (window.scrollY > 300) {
-          btnTopo.style.display = 'block';
+          btnTopo.style.display = 'flex';
         } else {
           btnTopo.style.display = 'none';
         }
@@ -511,10 +542,17 @@
         box-shadow: 0 2px 12px rgba(0,0,0,0.18);
         cursor: pointer;
         transition: background 0.2s, transform 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
       }
       #btn-topo:hover {
         background: #0a7bbd;
         transform: scale(1.08);
+      }
+      #btn-topo svg {
+        display: block;
       }
       @media (max-width: 600px) {
         #btn-topo {
