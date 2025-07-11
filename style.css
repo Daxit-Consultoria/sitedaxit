@@ -91,6 +91,23 @@ h3 {
   font-weight: 500;
   color: #0a1833;
   box-shadow: 0 1px 4px rgba(10, 24, 51, 0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.services div:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.1);
+}
+.service-icon {
+  color: #128c7e;
+  margin-right: 0.7em;
+  font-size: 1.3em;
+  vertical-align: middle;
+  transition: color 0.2s, transform 0.2s;
+}
+.services div:hover .service-icon {
+  color: #25d366;
+  transform: scale(1.2) rotate(-8deg);
 }
 .diferenciais-list {
   display: flex;
@@ -150,6 +167,34 @@ footer {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+.nav-list li.active a,
+.nav-list li a.active {
+  color: #25d366 !important;
+  font-weight: bold;
+  border-bottom: 2px solid #25d366;
+}
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: linear-gradient(90deg, #25d366 60%, #128c7e 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.6em;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.15);
+  cursor: pointer;
+  z-index: 2000;
+  transition: opacity 0.3s, transform 0.3s;
+  opacity: 0.85;
+}
+#back-to-top:hover {
+  opacity: 1;
+  transform: scale(1.08);
 }
 @media (max-width: 900px) {
   .header-flex {
@@ -261,4 +306,51 @@ section {
 section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Efeito hover nos cards de serviço */
+/* Animação nos ícones dos serviços */
+/* Destaque do menu ativo */
+/* Botão voltar ao topo */
+/* Header com sombra ao rolar */
+/* Formulário de contato */
+.form-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 1.5em;
+  max-width: 400px;
+}
+.form-contato input,
+.form-contato textarea {
+  padding: 0.8em;
+  border-radius: 8px;
+  border: 1px solid #cfd8dc;
+  font-size: 1em;
+  font-family: inherit;
+  resize: vertical;
+}
+.form-contato button {
+  background: linear-gradient(90deg, #25d366 60%, #128c7e 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8em 1.5em;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.form-contato button:hover {
+  background: linear-gradient(90deg, #128c7e 60%, #25d366 100%);
+  transform: scale(1.04);
+}
+.form-feedback {
+  margin-top: 0.5em;
+  font-size: 0.98em;
+  color: #25d366;
+  min-height: 1.2em;
 }

@@ -149,7 +149,26 @@
         </h2>
         <div class="contato-flex">
           <div>
-            <p>
+            <form class="form-contato">
+              <input type="text" name="nome" placeholder="Seu nome" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Seu e-mail"
+                required
+              />
+              <textarea
+                name="mensagem"
+                rows="4"
+                placeholder="Sua mensagem"
+                required
+              ></textarea>
+              <button type="submit">
+                <i class="fas fa-paper-plane"></i> Enviar
+              </button>
+              <div class="form-feedback"></div>
+            </form>
+            <p style="margin-top: 1.5em">
               <strong>Email:</strong>
               <a href="mailto:comercial@daxit.com.br">comercial@daxit.com.br</a>
             </p>
