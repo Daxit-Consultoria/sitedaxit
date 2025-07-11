@@ -170,8 +170,18 @@ footer {
   .nav-list.open {
     display: flex;
   }
-  .header-flex {
-    position: relative;
+}
+@media (min-width: 901px) {
+  .menu-toggle {
+    display: none !important;
+  }
+  .nav-list {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    box-shadow: none;
+    padding: 0;
   }
 }
 @media (max-width: 600px) {
