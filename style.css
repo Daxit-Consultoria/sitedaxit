@@ -152,8 +152,25 @@ footer {
   padding: 0;
 }
 @media (max-width: 900px) {
+  .header-flex {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  .logo {
+    margin-right: auto;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
   .menu-toggle {
     display: block;
+    margin-left: 0;
+    margin-right: 0;
+    order: 2;
   }
   .nav-list {
     display: none;
