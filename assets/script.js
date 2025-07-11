@@ -1,15 +1,19 @@
 // Animação de fade-in nas seções ao rolar a página
-document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll("section");
+window.addEventListener('DOMContentLoaded', function () {
+  const sections = document.querySelectorAll('section');
   const showSection = (section) => {
-    section.classList.add("visible");
+    section.classList.add('visible');
+  };
+  const hideSection = (section) => {
+    section.classList.remove('visible');
   };
   const observer = new IntersectionObserver(
-    (entries, obs) => {
+    (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           showSection(entry.target);
-          obs.unobserve(entry.target);
+        } else {
+          hideSection(entry.target);
         }
       });
     },
